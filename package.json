@@ -1,0 +1,65 @@
+{
+  "author": "JV team",
+  "name": "zoo",
+  "description": "A practical functional library for JavaScript programmers.",
+  "keywords": [
+    "ramda",
+    "functional",
+    "utils",
+    "utilities",
+    "toolkit",
+    "fp",
+    "tacit",
+    "point-free",
+    "curried",
+    "pure",
+    "fantasy-land"
+  ],
+  "sideEffects": false,
+  "version": "0.0.1",
+  "homepage": "https://ramdajs.com/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ramda/ramda.git"
+  },
+  "module": "es/index.js",
+  "main": "src/index",
+  "unpkg": "dist/ramda.min.js",
+  "jsdelivr": "dist/ramda.min.js",
+  "files": [
+    "es",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir cjs",
+    "build:mjs": "cross-env BABEL_ENV=es babel src/index.js --out-file mjs/index.mjs",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/zoo.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/zoo.min.js",
+    "build": "npm run build:es && npm run build:cjs && npm run build:umd && npm run build:umd:min && npm run build:mjs",
+    "test": "cross-env BABEL_ENV=cjs mocha --require @babel/register --reporter spec"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.4.4",
+    "@babel/types": "^7.4.4",
+    "babel-plugin-annotate-pure-calls": "^0.4.0",
+    "babel-plugin-import-export-rename": "^1.0.1",
+    "babelify": "^10.0.0",
+    "cross-env": "^5.2.0",
+    "dox": "latest",
+    "envvar": "^2.0.0",
+    "jsverify": "^0.8.4",
+    "mocha": "^6.2.2",
+    "rimraf": "^2.6.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-uglify": "^6.0.2"
+  }
+}
