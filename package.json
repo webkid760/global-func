@@ -42,7 +42,7 @@
     "test": "cross-env BABEL_ENV=cjs mocha --require @babel/register --reporter spec"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
