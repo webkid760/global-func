@@ -57,7 +57,7 @@
     "dox": "latest",
     "envvar": "^2.0.0",
     "jsverify": "^0.8.4",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "rimraf": "^2.6.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-uglify": "^6.0.2"
